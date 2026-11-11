@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VibeLauncher — a Minecraft launcher written in Rust</title>
+<meta name="description" content="VibeLauncher is an open-source Minecraft launcher written in Rust for Windows, macOS and Linux. Instances, mods and modpacks, Microsoft sign-in, no telemetry, no servers of its own.">
+<link rel="canonical" href="https://vibelauncher.org/">
+<meta name="theme-color" content="#0e0d14" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#faf9fd" media="(prefers-color-scheme: light)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="VibeLauncher">
+<meta property="og:url" content="https://vibelauncher.org/">
+<meta property="og:title" content="VibeLauncher — a Minecraft launcher written in Rust">
+<meta property="og:description" content="Instances, mods and modpacks, Microsoft sign-in and Vibefork. Open source, no telemetry, no servers of its own.">
+<meta property="og:image" content="https://vibelauncher.org/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="VibeLauncher — a Minecraft launcher written in Rust">
+<meta name="twitter:description" content="Instances, mods and modpacks, Microsoft sign-in and Vibefork. Open source, no telemetry, no servers of its own.">
+<meta name="twitter:image" content="https://vibelauncher.org/assets/img/og.png">
+<link rel="icon" href="assets/icons/favicon.ico" sizes="32x32">
+<link rel="icon" href="assets/icons/mono-light.svg" type="image/svg+xml" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="assets/icons/mono-dark.svg" type="image/svg+xml" media="(prefers-color-scheme: light)">
+<link rel="apple-touch-icon" href="assets/icons/icon.svg">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/chrome.css">
+<link rel="stylesheet" href="assets/css/sections.css">
+<link rel="stylesheet" href="assets/css/pages.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "VibeLauncher",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "description": "A Minecraft launcher written in Rust: instances, game versions and mod loaders, mods and modpacks, Microsoft account sign-in, Java runtimes and Vibefork.",
+  "url": "https://vibelauncher.org/",
+  "downloadUrl": "https://github.com/FQ401/vibelauncher/releases",
+  "softwareVersion": "0.0.0",
+  "license": "https://github.com/FQ401/vibelauncher/blob/main/LICENSE",
+  "codeRepository": "https://github.com/FQ401/vibelauncher",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to the content</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="index.html">
+      <img src="assets/icons/mark.svg" alt="" width="30" height="30">
+      <span class="brand__word">VibeLauncher</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open the menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16"></path>
+      </svg>
+    </button>
+    <nav class="site-nav" id="site-nav" data-open="false" aria-label="Main">
+      <ul class="site-nav__list">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#modpacks">Modpacks</a></li>
+        <li><a href="#vibefork">Vibefork</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+        <li><a href="#download">Download</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="site-nav__github" href="https://github.com/FQ401/vibelauncher" rel="noopener">GitHub</a></li>
+      </ul>
+    </nav>
+    <div class="site-header__actions">
+      <a class="button button--primary button--small" href="https://github.com/FQ401/vibelauncher/releases" rel="noopener">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="container hero__inner">
+      <div>
+        <h1 class="hero__title">A Minecraft launcher written in Rust.</h1>
+        <p class="hero__lead">
+          Instances, mods, modpacks and Microsoft sign-in — with no account on someone else's server.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="https://github.com/FQ401/vibelauncher/releases" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"></path>
+            </svg>
+            Download
+          </a>
+          <a class="button" href="https://github.com/FQ401/vibelauncher" rel="noopener">Source code</a>
+        </div>
+        <ul class="platform-chips">
+          <li class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"></rect><path d="M8 21h8"></path></svg>
+            Windows
+          </li>
+          <li class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M16 3a9 9 0 100 18h1a2 2 0 002-2V5a2 2 0 00-2-2z"></path></svg>
+            macOS
+          </li>
+          <li class="chip">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="9" r="5"></circle><path d="M9.5 13.5L7 21l5-2.5L17 21l-2.5-7.5"></path></svg>
+            Linux
+          </li>
+        </ul>
+        <p class="hero__note">
+          <strong>No telemetry, no analytics, no crash reporting.</strong>
+          Your account tokens stay in your system keyring.
+        </p>
+      </div>
+      <figure class="hero__figure">
+        <div class="shot-frame">
+          <div class="shot-frame__bar" aria-hidden="true">
+            <span class="shot-frame__dot"></span><span class="shot-frame__dot"></span><span class="shot-frame__dot"></span>
+          </div>
+          <!-- The real image of the launcher goes here: assets/img/launcher-main.webp -->
+          <div class="shot-frame__body"><span>screenshot of the launcher</span></div>
+        </div>
+        <figcaption class="hero__caption">The main window of VibeLauncher.</figcaption>
+      </figure>
+    </div>
+    <div class="container">
+      <p class="hero__disclaimer">
+        <strong>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</strong>
+        VibeLauncher is an independent project. Minecraft is a trademark of Mojang AB. Microsoft and Xbox are
+        trademarks of Microsoft Corporation. The launcher contains no Minecraft game files; they are downloaded
+        from Mojang's servers.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Features</p>
+        <h2>What it does</h2>
+      </div>
+      <ul class="features">
+        <li class="feature">
+          <h3>Instances</h3>
+          <p>Several game directories, each with its own version, loader and mods.</p>
+        </li>
+        <li class="feature">
+          <h3>Versions and loaders</h3>
+          <p>Vanilla, Forge, Fabric, Quilt, NeoForge.</p>
+        </li>
+        <li class="feature">
+          <h3>Mods and modpacks</h3>
+          <p>Modrinth and CurseForge. Six imported formats.</p>
+        </li>
+        <li class="feature">
+          <h3>Microsoft sign-in</h3>
+          <p>Your own account. The tokens stay in the system keyring.</p>
+        </li>
+        <li class="feature">
+          <h3>Java</h3>
+          <p>Detected on the machine, downloaded from Adoptium when missing.</p>
+        </li>
+        <li class="feature">
+          <h3>Servers</h3>
+          <p>The servers of an instance, pinged and joined from the launcher.</p>
+        </li>
+        <li class="feature">
+          <h3>Vibefork</h3>
+          <p>Adapt a mod or a modpack with your own AI model.</p>
+        </li>
+        <li class="feature">
+          <h3>Diagnostics</h3>
+          <p>Share a game log on mclo.gs, only after you confirm it.</p>
+        </li>
+      </ul>
+      <p class="formats__note">
+        Every file of a modpack is checked by its hash before it is installed.
+        <a href="privacy.html">What the launcher sends</a> — and what it does not.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--tight" id="modpacks">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Modpacks</p>
+        <h2>Six formats to import</h2>
+      </div>
+      <ul class="formats">
+        <li class="format">
+          <p class="format__name">Modrinth · .mrpack</p>
+          <p class="format__desc">The format of Modrinth.</p>
+        </li>
+        <li class="format">
+          <p class="format__name">CurseForge · manifest.json</p>
+          <p class="format__desc">The manifest of CurseForge.</p>
+        </li>
+        <li class="format">
+          <p class="format__name">ATLauncher</p>
+          <p class="format__desc">minecraftinstance.json</p>
+        </li>
+        <li class="format">
+          <p class="format__name">FTB</p>
+          <p class="format__desc">The modpacks of the FTB series.</p>
+        </li>
+        <li class="format">
+          <p class="format__name">Technic</p>
+          <p class="format__desc">modpacks.yml</p>
+        </li>
+        <li class="format">
+          <p class="format__name">packwiz</p>
+          <p class="format__desc">pack.toml</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="vibefork">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Vibefork</p>
+        <h2>Adapt a mod or a modpack with your own model</h2>
+        <p class="section__lead">
+          Vibefork changes a mod or a modpack with an AI model of your choice. You decide what to keep.
+          The model is yours, and the changes are made on your machine.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Privacy</p>
+        <h2>Does it phone home? No.</h2>
+      </div>
+      <ul class="points">
+        <li class="point">
+          <h3 class="point__title">No telemetry</h3>
+          <p class="point__text">No analytics, no crash reporting.</p>
+        </li>
+        <li class="point">
+          <h3 class="point__title">Tokens in the keyring</h3>
+          <p class="point__text">Windows Credential Manager, macOS Keychain, Secret Service on Linux.</p>
+        </li>
+        <li class="point">
+          <h3 class="point__title">A fixed list of services</h3>
+          <p class="point__text">Microsoft, Xbox Live, Mojang, Modrinth, CurseForge, Adoptium, mclo.gs.</p>
+        </li>
+        <li class="point">
+          <h3 class="point__title">Logs on request</h3>
+          <p class="point__text">Uploaded to mclo.gs only after you confirm it.</p>
+        </li>
+      </ul>
+      <p><a href="privacy.html">Read the privacy policy</a></p>
+    </div>
+  </section>
+
+  <section class="section" id="download">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Download</p>
+        <h2>Get the launcher</h2>
+      </div>
+      <ul class="downloads">
+        <li class="download">
+          <h3 class="download__os">Windows</h3>
+          <p class="download__file">vibelauncher-&lt;version&gt;-windows-x64.msi</p>
+          <a class="button button--primary" href="https://github.com/FQ401/vibelauncher/releases" rel="noopener">Download</a>
+        </li>
+        <li class="download">
+          <h3 class="download__os">macOS</h3>
+          <p class="download__file">vibelauncher-&lt;version&gt;-macos-universal.dmg</p>
+          <a class="button button--primary" href="https://github.com/FQ401/vibelauncher/releases" rel="noopener">Download</a>
+        </li>
+        <li class="download">
+          <h3 class="download__os">Linux</h3>
+          <p class="download__file">tar.gz · AppImage · .deb · .rpm</p>
+          <a class="button button--primary" href="https://github.com/FQ401/vibelauncher/releases" rel="noopener">Download</a>
+        </li>
+      </ul>
+      <p class="formats__note">
+        The builds are not signed: SmartScreen on Windows and Gatekeeper on macOS may ask once on the first
+        start. <a href="download.html">What to expect</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">FAQ</p>
+        <h2>Questions</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Does it need Java?</summary>
+          <div class="faq__body">
+            <p>Java is detected on your machine; the launcher can download a runtime from Adoptium when it is missing.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Does it phone home?</summary>
+          <div class="faq__body">
+            <p>No. The project runs no servers of its own, and the launcher has no telemetry, no analytics and no crash reporting.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Where are my tokens?</summary>
+          <div class="faq__body">
+            <p>In the keyring of your operating system, never in a configuration file or a log.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How do I import a modpack?</summary>
+          <div class="faq__body">
+            <p>Six formats are read: Modrinth, CurseForge, ATLauncher, FTB, Technic and packwiz. Every file is checked by its hash.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Is it signed? Will my antivirus complain?</summary>
+          <div class="faq__body">
+            <p>The builds are not signed with a code signing certificate, so SmartScreen may ask once on Windows. On macOS the app is signed ad hoc and not notarized.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How do I report a problem?</summary>
+          <div class="faq__body">
+            <p>Open an issue on <a href="https://github.com/FQ401/vibelauncher/issues" rel="noopener">GitHub</a>, or write to <a href="mailto:vibelauncher@vibefork.me">vibelauncher@vibefork.me</a>.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="disclaimer">
+      <strong>NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG OR MICROSOFT.</strong>
+      VibeLauncher is an independent project. Minecraft is a trademark of Mojang AB. Microsoft and Xbox are
+      trademarks of Microsoft Corporation. The launcher contains no Minecraft game files; they are downloaded
+      from Mojang's servers.
+    </p>
+    <div class="site-footer__grid">
+      <div>
+        <p class="site-footer__title">VibeLauncher</p>
+        <p style="font-size: 0.94rem;">An independent Minecraft launcher written in Rust. Open source, no servers of its own, no telemetry.</p>
+        <button class="theme-toggle" type="button" aria-pressed="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
+          </svg>
+          <span>Switch the theme</span>
+        </button>
+      </div>
+      <div>
+        <p class="site-footer__title">The project</p>
+        <ul class="site-footer__links">
+          <li><a href="https://github.com/FQ401/vibelauncher" rel="noopener">Repository</a></li>
+          <li><a href="https://github.com/FQ401/vibelauncher/releases" rel="noopener">Releases</a></li>
+          <li><a href="privacy.html">Privacy policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="site-footer__title">Contact</p>
+        <ul class="site-footer__links">
+          <li><a href="mailto:vibelauncher@vibefork.me">vibelauncher@vibefork.me</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>© 2026 the VibeLauncher contributors. Licence: MIT.</span>
+      <span>Status: early development.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

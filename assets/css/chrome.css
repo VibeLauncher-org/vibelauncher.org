@@ -1,0 +1,303 @@
+/* The frame of the site: the header, the buttons and the footer.
+
+   The palette and the typography live in ase.css. */
+
+/* The header ------------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-height: 4rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.06rem;
+  letter-spacing: -0.01em;
+}
+
+.brand img {
+  width: 30px;
+  height: 30px;
+  display: block;
+}
+
+.brand__word {
+  color: var(--text);
+}
+
+.site-nav {
+  margin-left: auto;
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+}
+
+.site-nav__list a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.site-nav__list a:hover {
+  color: var(--text);
+}
+
+.site-nav__github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.nav-toggle svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* The buttons ------------------------------------------------------------ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.62rem 1.15rem;
+  border-radius: var(--radius-small);
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 550;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.button:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.button--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.button--primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: var(--on-accent);
+}
+
+.button--small {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.9rem;
+}
+
+.button svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.theme-toggle svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* The footer ------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg-soft);
+  padding-block: 3rem 2.5rem;
+  margin-top: var(--section-gap);
+}
+
+.disclaimer {
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--text-faint);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-small);
+  padding: 0.9rem 1.1rem;
+  background: var(--surface);
+}
+
+.disclaimer strong {
+  display: block;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-bottom: 0.35rem;
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.site-footer__title {
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-bottom: 0.9rem;
+}
+
+.site-footer__links li + li {
+  margin-top: 0.55rem;
+}
+
+.site-footer__links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.94rem;
+}
+
+.site-footer__links a:hover {
+  color: var(--accent-text);
+}
+
+.site-footer__bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+/* The small screens ------------------------------------------------------ */
+
+@media (max-width: 860px) {
+  .nav-toggle {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    inset: 100% 0 auto 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 0.5rem var(--gutter) 1.25rem;
+  }
+
+  .site-nav[data-open='true'] {
+    display: block;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .site-nav__list li {
+    width: 100%;
+  }
+
+  .site-nav__list a {
+    display: block;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 1rem;
+  }
+
+  .site-nav__list li:last-child a {
+    border-bottom: 0;
+  }
+
+  .site-header__actions .button--small {
+    display: none;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

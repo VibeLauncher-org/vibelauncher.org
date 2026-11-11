@@ -1,0 +1,225 @@
+/* The base of the site: the tokens, the reset, the typography, the header and
+   the footer. The sections live in `sections.css`.
+
+   The palette is neutral on purpose: the accent marks the primary action and
+   the focus ring, so it reads as an action and not as decoration. */
+
+/* The fonts are cut down to the glyphs of the site and packed into WOFF2; the
+   system stack is the fallback if the files fail to load. */
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/inter.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('../fonts/archivo.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist Mono';
+  src: url('../fonts/geist-mono.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark light;
+
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Archivo', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  --bg: #0e0d14;
+  --bg-soft: #141320;
+  --surface: #181624;
+  --surface-raised: #1f1c2d;
+  --border: #2a2739;
+  --border-strong: #6a668c;
+  --text: #e9e7f2;
+  --text-muted: #a6a2b8;
+  --text-faint: #837e99;
+  --accent: #8f72fa;
+  --accent-text: #b9a4ff;
+  --accent-strong: #a78bff;
+  --on-accent: #140f24;
+  --code-bg: #100e1a;
+
+  --radius: 14px;
+  --radius-small: 9px;
+  --container: 1120px;
+  --gutter: clamp(1.15rem, 4vw, 2.5rem);
+  --section-gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+/* The light palette: it applies when the system asks for it and when the
+   reader picks it in the footer. The two blocks must stay in step. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme='dark']) {
+    --bg: #faf9fd;
+    --bg-soft: #f2f0f8;
+    --surface: #ffffff;
+    --surface-raised: #f6f4fb;
+    --border: #e2dfec;
+    --border-strong: #8b88a0;
+    --text: #191627;
+    --text-muted: #55516a;
+    --text-faint: #6d6880;
+    --accent: #6b4ce0;
+    --accent-text: #5636c4;
+    --accent-strong: #5a3cd0;
+    --on-accent: #ffffff;
+    --code-bg: #f3f1f9;
+  }
+}
+
+:root[data-theme='light'] {
+  --bg: #faf9fd;
+  --bg-soft: #f2f0f8;
+  --surface: #ffffff;
+  --surface-raised: #f6f4fb;
+  --border: #e2dfec;
+  --border-strong: #8b88a0;
+  --text: #191627;
+  --text-muted: #55516a;
+  --text-faint: #6d6880;
+  --accent: #6b4ce0;
+  --accent-text: #5636c4;
+  --accent-strong: #5a3cd0;
+  --on-accent: #ffffff;
+  --code-bg: #f3f1f9;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.6em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+}
+
+h2 {
+  font-size: clamp(1.55rem, 3.4vw, 2.15rem);
+}
+
+h3 {
+  font-size: 1.12rem;
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--accent-text);
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-strong);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+code,
+kbd,
+.version {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+code {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.1em 0.4em;
+  /* A long path must break inside the code, not push the card out. */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: var(--on-accent);
+  padding: 0.65rem 1rem;
+  border-radius: 0 0 var(--radius-small) 0;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+

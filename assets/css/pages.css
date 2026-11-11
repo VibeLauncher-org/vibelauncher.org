@@ -1,0 +1,67 @@
+/* The privacy policy: the list of the points and the table of the requests. */
+
+
+.policy-list {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+}
+
+.policy-list li {
+  margin-bottom: 0.5rem;
+}
+
+.policy-list strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.93rem;
+  min-width: 40rem;
+}
+
+.policy-table caption {
+  text-align: left;
+  padding: 1rem 1.25rem 0;
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+
+.policy-table th,
+.policy-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.85rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+
+.policy-table thead th {
+  background: var(--bg-soft);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  border-top: 0;
+}
+
+.policy-table td {
+  color: var(--text-muted);
+}
+
+.policy-table td:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
