@@ -40,22 +40,22 @@ drive Chrome over the DevTools Protocol.
 
 ```powershell
 # the fonts: the glyphs of the site, cut down and packed into WOFF2
-python website/tools/build_assets.py
+python tools/build_assets.py
 
 # the Open Graph image and the favicon
-python website/tools/build_og.py
+python tools/build_og.py
 
 # the HTML must have no error
-python website/tools/check_html.py
+python tools/check_html.py
 
 # the contrast of the pairs of colours must be at least 4.5:1
-python website/tools/check_contrast.py
+python tools/check_contrast.py
 
 # the checks below need the site to be served:
-#   cd website; python -m http.server 8931
-node website/tools/check-layout.mjs http://127.0.0.1:8931/index.html
-node website/tools/check-weight.mjs http://127.0.0.1:8931
-node website/tools/shots.mjs http://127.0.0.1:8931
+#   python -m http.server 8931
+node tools/check-layout.mjs http://127.0.0.1:8931/index.html
+node tools/check-weight.mjs http://127.0.0.1:8931
+node tools/shots.mjs http://127.0.0.1:8931
 ```
 
 `check-layout.mjs` measures the page at 320, 768 and 1440 pixels and reports the
